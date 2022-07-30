@@ -43,6 +43,9 @@ dependencies:
   adaptive_breakpoints: ^0.1.4
   flutter_markdown: ^0.6.10+3
   google_fonts: ^3.0.1
+  http: ^0.13.4
+  webview_flutter: ^3.0.4
+  webview_flutter_web: ^0.1.0+4
 
 dev_dependencies:
   flutter_test:
