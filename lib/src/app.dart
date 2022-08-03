@@ -2,11 +2,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sketch/l10n/l10n.dart';
-import 'package:sketch/src/view/resume.dart';
+import 'package:sketch/src/ui/resume.dart';
+import 'package:sketch/src/ui/view/appbar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../gen/assets.gen.dart';
-import 'view/article/articles.dart';
+import 'ui/article/articles.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -46,26 +47,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
-
     return Scaffold(
-        appBar: PreferredSize(
-            preferredSize: Size(screenSize.width, 48),
-            child: Padding(
-              padding: const EdgeInsets.only(left: 16, right: 16),
-              child: Container(
-                alignment: Alignment.center,
-                child: Row(
-                  children: [
-                    const Spacer(),
-                    TextButton(
-                        onPressed: () => _onTapResume(context),
-                        child: const Text('Resume',
-                            style: TextStyle(fontSize: 16)))
-                  ],
-                ),
-              ),
-            )),
+        appBar: const MainAppBar(),
         body: Padding(
           padding: const EdgeInsets.only(top: 160.0),
           child: Center(
@@ -124,13 +107,6 @@ class _MyHomePageState extends State<MyHomePage> {
   void _onTapGithub(BuildContext context) {
     final l10n = L10n.of(context)!;
     launchUrl(Uri.parse(l10n.github_url));
-  }
-
-  void _onTapResume(BuildContext context) {
-    Navigator.pushNamed(
-      context,
-      '/resume',
-    );
   }
 }
 

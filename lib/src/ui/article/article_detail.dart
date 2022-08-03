@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:sketch/src/ui/view/appbar.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class ArticleDetail extends StatefulWidget {
@@ -38,7 +39,7 @@ class _ArticleDetailState extends State<ArticleDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: const MainAppBar(),
       body: item != null
           ? WebView(
               initialUrl: 'about:blank',

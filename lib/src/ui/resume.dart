@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:sketch/src/ui/view/appbar.dart';
 
 import '../layout/adaptive.dart';
 
@@ -20,7 +21,6 @@ class _ResumePageState extends State<ResumePage> {
 
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
     final isDesktop = isDisplayDesktop(context);
     final isTablet = isDisplaySmallDesktop(context);
 
@@ -37,25 +37,7 @@ class _ResumePageState extends State<ResumePage> {
         });
 
     return Scaffold(
-        appBar: PreferredSize(
-            preferredSize: Size(screenSize.width, 48),
-            child: Padding(
-              padding: const EdgeInsets.only(left: 16, right: 16),
-              child: Container(
-                alignment: Alignment.center,
-                child: Row(
-                  children: [
-                    const Spacer(),
-                    TextButton(
-                        onPressed: () => {
-                              // ignore.
-                            },
-                        child: const Text('Resume',
-                            style: TextStyle(fontSize: 16)))
-                  ],
-                ),
-              ),
-            )),
+        appBar: const MainAppBar(),
         body: Markdown(
             data: _resume,
             padding: EdgeInsets.only(

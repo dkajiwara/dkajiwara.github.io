@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:sketch/src/view/article/article_detail.dart';
+import 'package:sketch/src/ui/article/article_detail.dart';
 
 class ArticleList extends StatefulWidget {
   const ArticleList({Key? key}) : super(key: key);
