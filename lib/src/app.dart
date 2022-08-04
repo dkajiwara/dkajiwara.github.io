@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -123,22 +124,30 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _onTapTwitter(BuildContext context) {
+    _trackEvent("Twitter");
     final l10n = L10n.of(context)!;
     launchUrl(Uri.parse(l10n.twitter_url));
   }
 
   void _onTapGithub(BuildContext context) {
+    _trackEvent("Github");
     final l10n = L10n.of(context)!;
     launchUrl(Uri.parse(l10n.github_url));
   }
 
-  void _onTapResume(BuildContext context) {
+  void _onTapResume(BuildContext context) async {
+    _trackEvent("職務経歴書");
     Navigator.pushNamed(context, '/resume');
   }
 
   void _onTapBlog(BuildContext context) {
+    _trackEvent("ブログ");
     final l10n = L10n.of(context)!;
     launchUrl(Uri.parse(l10n.hatena_url));
+  }
+
+  void _trackEvent(String name) async {
+    await FirebaseAnalytics.instance.logEvent(name: name);
   }
 }
 
