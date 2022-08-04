@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:sketch/src/ui/layout/layout.dart';
 import 'package:sketch/src/ui/view/appbar.dart';
-
-import '../layout/adaptive.dart';
 
 class ResumePage extends StatefulWidget {
   const ResumePage({Key? key}) : super(key: key);
@@ -21,14 +20,7 @@ class _ResumePageState extends State<ResumePage> {
 
   @override
   Widget build(BuildContext context) {
-    final isDesktop = isDisplayDesktop(context);
-    final isTablet = isDisplaySmallDesktop(context);
-
-    final horizontalPadding = isTablet
-        ? 160.0
-        : isDesktop
-            ? 440.0
-            : 16.0;
+    final padding = getHorizontalPadding(context);
 
     loadAssetsTextFile("resume.md").then((value) => {
           setState(() {
@@ -40,9 +32,7 @@ class _ResumePageState extends State<ResumePage> {
         appBar: const MainAppBar(),
         body: Markdown(
             data: _resume,
-            padding: EdgeInsets.only(
-                left: horizontalPadding,
-                right: horizontalPadding,
-                bottom: 40)));
+            padding:
+                EdgeInsets.only(left: padding, right: padding, bottom: 40)));
   }
 }

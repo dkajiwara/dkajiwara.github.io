@@ -20,10 +20,7 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
                   "dkajiii",
                   style: GoogleFonts.monoton(fontSize: 30),
                 )),
-            const Spacer(),
-            TextButton(
-                onPressed: () => _onTapResume(context),
-                child: const Text('Resume', style: TextStyle(fontSize: 16)))
+            const Spacer()
           ],
         ),
       ),
@@ -32,13 +29,6 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => const Size.fromHeight(48);
-
-  void _onTapResume(BuildContext context) {
-    Navigator.pushNamed(
-      context,
-      '/resume',
-    );
-  }
 
   void _onTapHome(BuildContext context) {
     Navigator.of(context).popUntil((route) => route.isFirst);

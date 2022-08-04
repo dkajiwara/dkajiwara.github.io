@@ -2,12 +2,13 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sketch/l10n/l10n.dart';
+import 'package:sketch/src/ui/article/articles.dart';
 import 'package:sketch/src/ui/resume.dart';
 import 'package:sketch/src/ui/view/appbar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../gen/assets.gen.dart';
-import 'ui/article/articles.dart';
+import 'ui/layout/layout.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const MyHomePage(),
-        '/resume': (context) => const ResumePage()
+        '/resume': (context) => const ResumePage(),
+        '/articles': (context) => const ArticleList()
       },
       theme: ThemeData(
           textTheme: GoogleFonts.zenKakuGothicNewTextTheme(
@@ -47,6 +49,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    final padding = getHorizontalPadding(context);
+
     return Scaffold(
         appBar: const MainAppBar(),
         body: Padding(
@@ -64,22 +68,43 @@ class _MyHomePageState extends State<MyHomePage> {
                         image: AssetImage(Assets.images.profileIcon.path),
                       )),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 40.0),
-                  child: Text(
+                Padding(
+                  padding:
+                      EdgeInsets.only(top: 40.0, left: padding, right: padding),
+                  child: const Text(
                     "Daiki Kajiwara",
                     style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 20.0),
-                  child: Text(
+                Padding(
+                  padding:
+                      EdgeInsets.only(top: 20.0, left: padding, right: padding),
+                  child: const Text(
                     "I'm a software engineer.",
                     style: TextStyle(fontSize: 16),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 40.0),
+                  padding:
+                      EdgeInsets.only(top: 20.0, left: padding, right: padding),
+                  child: TextButton(
+                      onPressed: () => _onTapResume(context),
+                      child: const Text('Resume',
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.w700))),
+                ),
+                Padding(
+                  padding:
+                      EdgeInsets.only(top: 8.0, left: padding, right: padding),
+                  child: TextButton(
+                      onPressed: () => _onTapBlog(context),
+                      child: const Text('Blog',
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.w700))),
+                ),
+                Padding(
+                  padding:
+                      EdgeInsets.only(top: 20.0, left: padding, right: padding),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -92,7 +117,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     ],
                   ),
                 ),
-                Flexible(child: ArticleList())
+                Padding(
+                  padding:
+                      EdgeInsets.only(top: 20.0, left: padding, right: padding),
+                  child: const Divider(),
+                )
               ],
             ),
           ),
@@ -107,6 +136,14 @@ class _MyHomePageState extends State<MyHomePage> {
   void _onTapGithub(BuildContext context) {
     final l10n = L10n.of(context)!;
     launchUrl(Uri.parse(l10n.github_url));
+  }
+
+  void _onTapResume(BuildContext context) {
+    Navigator.pushNamed(context, '/resume');
+  }
+
+  void _onTapBlog(BuildContext context) {
+    Navigator.pushNamed(context, '/articles');
   }
 }
 
