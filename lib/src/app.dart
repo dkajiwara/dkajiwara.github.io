@@ -95,15 +95,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Padding(
                   padding:
-                      EdgeInsets.only(top: 8.0, left: padding, right: padding),
-                  child: TextButton(
-                      onPressed: () => _onTapBlog(context),
-                      child: const Text('Blog',
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.w700))),
-                ),
-                Padding(
-                  padding:
                       EdgeInsets.only(top: 20.0, left: padding, right: padding),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -114,6 +105,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       IconButton(
                           onPressed: () => _onTapGithub(context),
                           icon: Assets.images.icons.github.svg()),
+                      IconButton(
+                          onPressed: () => _onTapBlog(context),
+                          icon: Assets.images.icons.globe.svg()),
                     ],
                   ),
                 ),
@@ -143,7 +137,8 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _onTapBlog(BuildContext context) {
-    Navigator.pushNamed(context, '/articles');
+    final l10n = L10n.of(context)!;
+    launchUrl(Uri.parse(l10n.hatena_url));
   }
 }
 
