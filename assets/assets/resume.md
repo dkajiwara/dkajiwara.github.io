@@ -10,9 +10,28 @@
 
 ## 職務経歴
 
-### 2017年04月 ~ 2022年08月 株式会社Clearnote モバイルチーム リードエンジニア
+### 2022年08月 ~ 現在 株式会社 between the arts
+**【2022/08~現在】コレクション管理アプリ開発(Flutter)**
 
-**【2022/04~現在】ノートアプリの新規開発(Android)**
+- プロジェクト概要
+
+コレクションの資産管理アプリのアプリ版開発を担当。
+アプリ側の開発に関しては基本的には私一名で対応。そのため、仕様の検討からテストリリースまで全てに関わっています。
+
+
+- 開発環境
+    - 言語
+        - Dart
+    - ライブラリ
+        - algolia/amplify/hooks_riverpod/go_router/braze/freezed
+    - OS
+        - macOS
+    - ツール
+        - Android Studio/Bitrise/Github/Figma
+
+### 2017年04月 ~ 2022年08月(5年4ヶ月) 株式会社Clearnote モバイルチーム リードエンジニア
+
+**【2022/04~2022/08】ノートアプリの新規開発(Android)**
 
 - プロジェクト概要
 
@@ -28,7 +47,7 @@
     - ツール
         - Android Studio/Bitrise/Github/Pivotal Tracker
 
-**【2017/07~現在】Clearnote アプリ開発(Android, iOS）**
+**【2017/07~2022/08】Clearnote アプリ開発(Android, iOS）**
 
 - プロジェクト概要
 
