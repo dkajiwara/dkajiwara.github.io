@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -14,7 +15,7 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
           children: [
             GestureDetector(
                 onTap: () {
-                  _onTapHome(context);
+                  context.go('/');
                 },
                 child: Text(
                   "dkajiii",
@@ -29,8 +30,4 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => const Size.fromHeight(48);
-
-  void _onTapHome(BuildContext context) {
-    Navigator.of(context).popUntil((route) => route.isFirst);
-  }
 }

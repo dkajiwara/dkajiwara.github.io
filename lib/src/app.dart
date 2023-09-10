@@ -1,10 +1,10 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sketch/l10n/l10n.dart';
-import 'package:sketch/src/ui/article/articles.dart';
-import 'package:sketch/src/ui/resume.dart';
+import 'package:sketch/src/route.dart';
 import 'package:sketch/src/ui/view/appbar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -16,16 +16,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Dkajiii',
       localizationsDelegates: L10n.localizationsDelegates,
       supportedLocales: L10n.supportedLocales,
-      initialRoute: '/',
-      routes: {
-        '/': (context) => const MyHomePage(),
-        '/resume': (context) => const ResumePage(),
-        '/articles': (context) => const ArticleList()
-      },
+      routerConfig: router,
       theme: ThemeData(
           textTheme: GoogleFonts.zenKakuGothicNewTextTheme(
               Theme.of(context).textTheme),
@@ -137,7 +132,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _onTapResume(BuildContext context) async {
     _trackEvent("職務経歴書");
-    Navigator.pushNamed(context, '/resume');
+    context.push('/resume');
   }
 
   void _onTapBlog(BuildContext context) {
