@@ -7468,6 +7468,7 @@ SOFTWARE.
 --------------------------------------------------------------------------------
 flutter_lints
 flutter_markdown
+go_router
 path_provider
 path_provider_android
 path_provider_foundation
