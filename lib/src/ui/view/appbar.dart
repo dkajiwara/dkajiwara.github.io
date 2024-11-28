@@ -14,13 +14,14 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: Row(
           children: [
             GestureDetector(
-                onTap: () {
-                  context.go('/');
-                },
-                child: Text(
-                  "dkajiii",
-                  style: GoogleFonts.monoton(fontSize: 30),
-                )),
+              onTap: () {
+                context.go('/');
+              },
+              child: Text(
+                "dkajiii",
+                style: GoogleFonts.monoton(fontSize: 30),
+              ),
+            ),
             const Spacer()
           ],
         ),

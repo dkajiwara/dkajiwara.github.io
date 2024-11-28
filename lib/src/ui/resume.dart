@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:sketch/src/ui/layout/layout.dart';
-import 'package:sketch/src/ui/view/appbar.dart';
+import 'package:profile/src/ui/layout/layout.dart';
+import 'package:profile/src/ui/view/appbar.dart';
 
 class ResumePage extends StatefulWidget {
   const ResumePage({Key? key}) : super(key: key);

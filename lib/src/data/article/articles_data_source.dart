@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:http/http.dart' as http;
-import 'package:sketch/src/ui/article/articles.dart';
+import 'package:profile/src/ui/article/articles.dart';
 
 final articlesDataSourceProvider =
     Provider<ArticlesDataSource>((ref) => RemoteArticlesDataSource());

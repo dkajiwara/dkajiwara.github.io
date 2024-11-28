@@ -1,4 +1,4 @@
-name: Profile
+name: profile
 description: About me.
 
 publish_to: 'none'
@@ -18,7 +18,7 @@ dependencies:
   url_launcher: ^6.1.5
   flutter_localizations:
     sdk: flutter
-  intl: ^0.18.1
+  intl: ^0.19.0
   adaptive_breakpoints: ^0.1.4
   flutter_markdown: ^0.6.10+3
   google_fonts: ^5.1.0
@@ -37,7 +37,7 @@ dev_dependencies:
 
   flutter_lints: ^2.0.0
   build_runner: ^2.4.6
-  flutter_gen_runner: ^5.3.1
+  flutter_gen_runner: ^5.8.0
 
 flutter_gen:
   output: lib/gen/
@@ -49,9 +49,9 @@ flutter_gen:
     rive: false
 
   assets:
-    enabled: true
-    package_parameter_enabled: false
-    style: dot-delimiter
+    outputs:
+      enabled: true
+      style: dot-delimiter
 
   fonts:
     enabled: true
@@ -62,8 +62,20 @@ flutter_gen:
 
 flutter:
   uses-material-design: true
+  fonts:
+    - family: Zen_Kaku_Gothic_New
+      fonts:
+        - asset: assets/fonts/Zen_Kaku_Gothic_New/ZenKakuGothicNew-Black.ttf
+        - asset: assets/fonts/Zen_Kaku_Gothic_New/ZenKakuGothicNew-Bold.ttf
+        - asset: assets/fonts/Zen_Kaku_Gothic_New/ZenKakuGothicNew-Light.ttf
+        - asset: assets/fonts/Zen_Kaku_Gothic_New/ZenKakuGothicNew-Medium.ttf
+        - asset: assets/fonts/Zen_Kaku_Gothic_New/ZenKakuGothicNew-Regular.ttf
+
+    - family: Monoton
+      fonts:
+        - asset: assets/fonts/Monoton/Monoton-Regular.ttf
 
   assets:
+    - assets/
     - assets/images/
     - assets/images/icons/
-    - assets/

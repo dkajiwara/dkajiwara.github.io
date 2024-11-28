@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:sketch/src/domain/article/articles_repository.dart';
-import 'package:sketch/src/ui/view/appbar.dart';
+import 'package:profile/src/domain/article/articles_repository.dart';
+import 'package:profile/src/ui/view/appbar.dart';
 
 import 'article_detail.dart';
 

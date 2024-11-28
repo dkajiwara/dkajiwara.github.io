@@ -1,5 +1,5 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:sketch/src/data/article/articles_data_source.dart';
+import 'package:profile/src/data/article/articles_data_source.dart';
 
 import '../../ui/article/articles.dart';
 
